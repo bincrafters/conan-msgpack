@@ -7,7 +7,7 @@ import os
 
 class MsgpackConan(ConanFile):
     name = "msgpack"
-    version = "3.0.1"
+    version = "3.1.1"
     description = "The official C++ library for MessagePack"
     url = "https://github.com/bincrafters/conan-msgpack"
     license = "BSL-1.0"
@@ -23,7 +23,7 @@ class MsgpackConan(ConanFile):
         os.rename(archive_name, self.source_subfolder)
 
     def build(self):
-        pass # silence warning
+        pass  # silence warning
 
     def package(self):
         include_dir = os.path.join(self.source_subfolder, "include")
