@@ -68,8 +68,8 @@ class MsgpackConan(ConanFile):
     def package(self):
         self.copy("LICENSE_1_0.txt", dst="licenses", src=self._source_subfolder)
         if self.options.header_only:
-            self.copy("*.h", dst=".", src=self._source_subfolder)
-            self.copy("*.hpp", dst=".", src=self._source_subfolder)
+            self.copy("*.h", dst="include", src=os.path.join(self._source_subfolder, "include"))
+            self.copy("*.hpp", dst="include", src=os.path.join(self._source_subfolder, "include"))
         else:
             cmake = self._configure_cmake()
             cmake.install()
