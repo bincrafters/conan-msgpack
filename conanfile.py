@@ -47,8 +47,7 @@ class MsgpackConan(ConanFile):
     def source(self):
         sha256 = "fbaa28c363a316fd7523f31d1745cf03eab0d1e1ea5a1c60aa0dffd4ce551afe"
         archive_name = self.name + "-" + self.version
-        tools.get("{0}/releases/download/cpp-{1}/{2}.tar.gz"
-            .format(self.homepage,  self.version, archive_name), sha256=sha256)
+        tools.get("{0}/releases/download/cpp-{1}/{2}.tar.gz".format(self.homepage,  self.version, archive_name), sha256=sha256)
         os.rename(archive_name, self._source_subfolder)
 
     def _configure_cmake(self):
