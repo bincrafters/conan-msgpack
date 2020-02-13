@@ -40,7 +40,7 @@ class MsgpackConan(ConanFile):
 
     def requirements(self):
         if not self.options.header_only and self.options.with_boost:
-            self.requires.add("boost/1.69.0@conan/stable")
+            self.requires.add("boost/1.69.0")
 
     def source(self):
         sha256 = "433cbcd741e1813db9ae4b2e192b83ac7b1d2dd7968a3e11470eacc6f4ab58d2"
